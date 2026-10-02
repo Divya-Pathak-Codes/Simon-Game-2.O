@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simon Neon Game</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style5.css">
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="stars"></div>
+
+    <div class="neon-shape shape-one"></div>
+    <div class="neon-shape shape-two"></div>
+    <div class="neon-shape shape-three"></div>
+
+    <div class="game-wrapper">
+
+        <!-- TOP BAR -->
+        <header class="top-bar">
+
+            <div class="brand">
+
+                <div class="simon-logo">
+                    <span class="green-text">S</span>
+                    <span class="yellow-text">I</span>
+                    <span class="blue-text">M</span>
+                    <span class="red-text">O</span>
+                    <span class="purple-text">N</span>
+                </div>
+
+                <div class="game-label">MEMORY GAME</div>
+
+            </div>
+
+
+            <div class="top-right">
+
+                <div class="best-score">
+                    <span class="trophy">🏆</span>
+
+                    <div>
+                        <small>BEST SCORE</small>
+                        <strong id="bestScore">0</strong>
+                    </div>
+                </div>
+
+                <button class="icon-button" id="settingsBtn">⚙</button>
+
+            </div>
+
+        </header>
+
+
+        <!-- SUBTITLE -->
+        <div class="subtitle">
+            WATCH <span>•</span> REMEMBER <span>•</span> REPEAT
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+            <!-- LEFT GAME -->
+            <section class="game-section">
+
+                <div class="status-pill">
+
+                    <span class="status-dot"></span>
+
+                    <span id="statusText">
+                        READY TO PLAY
+                    </span>
+
+                </div>
+
+
+                <!-- SIMON BOARD -->
+                <div class="simon-board">
+
+                    <div class="board-ring"></div>
+
+                    <!-- GREEN -->
+                    <button
+                        class="simon-pad green"
+                        data-color="green"
+                        aria-label="Green">
+                        
+                        <span class="pad-icon">◆</span>
+
+                    </button>
+
+
+                    <!-- RED -->
+                    <button
+                        class="simon-pad red"
+                        data-color="red"
+                        aria-label="Red">
+
+                        <span class="pad-icon">●</span>
+
+                    </button>
+
+
+                    <!-- YELLOW -->
+                    <button
+                        class="simon-pad yellow"
+                        data-color="yellow"
+                        aria-label="Yellow">
+
+                        <span class="pad-icon">▲</span>
+
+                    </button>
+
+
+                    <!-- BLUE -->
+                    <button
+                        class="simon-pad blue"
+                        data-color="blue"
+                        aria-label="Blue">
+
+                        <span class="pad-icon">◆</span>
+
+                    </button>
+
+
+                    <!-- CENTER -->
+                    <div class="center-console">
+
+                        <div class="center-glow"></div>
+
+                        <div class="center-inner">
+
+                            <div class="mini-logo">
+                                SIMON
+                            </div>
+
+                            <div
+                                class="center-message"
+                                id="centerMessage">
+                                PRESS START
+                            </div>
+
+                            <div class="level-small">
+                                LEVEL <span id="levelCenter">0</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- START BUTTON -->
+                <button class="start-button" id="startButton">
+
+                    <span class="play-icon">▶</span>
+
+                    <span id="startText">
+                        START GAME
+                    </span>
+
+                </button>
+
+
+                <div class="game-tip">
+                    <span>💡</span>
+                    Watch the pattern carefully
+                </div>
+
+            </section>
+
+
+
+            <!-- RIGHT HUD -->
+            <aside class="hud-panel">
+
+
+                <!-- LEVEL -->
+                <div class="hud-card level-card">
+
+                    <div class="card-heading">
+
+                        <span class="card-icon">◈</span>
+
+                        <span>LEVEL</span>
+
+                    </div>
+
+                    <div class="big-number" id="level">
+                        0
+                    </div>
+
+                    <div class="level-bars">
+
+                        <span class="bar active"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCORE -->
+                <div class="hud-card">
+
+                    <div class="card-heading">
+
+                        <span class="card-icon score-icon">★</span>
+
+                        <span>SCORE</span>
+
+                    </div>
+
+                    <div class="big-number" id="score">
+                        0
+                    </div>
+
+                    <div class="small-label">
+                        CURRENT RUN
+                    </div>
+
+                </div>
+
+
+                <!-- COMBO -->
+                <div class="hud-card combo-card">
+
+                    <div class="card-heading">
+
+                        <span class="card-icon combo-icon">⚡</span>
+
+                        <span>COMBO</span>
+
+                    </div>
+
+                    <div class="big-number">
+                        <span id="combo">0</span>
+                        <small>x</small>
+                    </div>
+
+                    <div class="combo-line">
+                        <div id="comboFill"></div>
+                    </div>
+
+                </div>
+
+
+                <!-- SOUND -->
+                <div class="sound-card">
+
+                    <div class="sound-info">
+
+                        <span class="sound-icon">🔊</span>
+
+                        <div>
+                            <strong>SOUND</strong>
+                            <small>GAME AUDIO</small>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="toggle active"
+                        id="soundToggle">
+
+                        <span></span>
+
+                    </button>
+
+                </div>
+
+
+            </aside>
+
+        </main>
+
+
+        <!-- BOTTOM -->
+        <footer class="footer">
+
+            <div class="footer-line"></div>
+
+            <div class="footer-text">
+                <span class="green-dot"></span>
+                SYSTEM ONLINE
+            </div>
+
+            <div class="footer-line"></div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- SETTINGS MODAL -->
+    <div class="modal" id="settingsModal">
+
+        <div class="modal-box">
+
+            <button class="close-modal" id="closeModal">
+                ×
+            </button>
+
+            <h2>GAME SETTINGS</h2>
+
+            <p>
+                Simon Memory Challenge
+            </p>
+
+            <div class="setting-row">
+
+                <span>Sound</span>
+
+                <span id="modalSound">
+                    ON
+                </span>
+
+            </div>
+
+            <div class="setting-row">
+
+                <span>Difficulty</span>
+
+                <span>NORMAL</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="app5.js"></script>
+
+</body>
+</html>
