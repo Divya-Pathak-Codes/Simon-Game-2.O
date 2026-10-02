@@ -60,7 +60,7 @@ This project is part of my journey of learning and improving my frontend develop
 Rather than considering the first version as "finished", I wanted to revisit the project, identify areas for improvement, and build a more polished version.
 
 ## LIVE DEMO
-
+[Play Simon Game 2.O](https://divya-pathak-codes.github.io/Simon-Game-2.O/)
 ## 👩‍💻 Author
 
 Built as part of my journey of learning and improving my frontend development and JavaScript skills.
