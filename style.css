@@ -625,8 +625,8 @@ body::before {
     background:
         linear-gradient(
             145deg,
-            #64ff91,
-            #00a943
+                      #d95980,
+     #d95980
         );
 
     box-shadow:
@@ -652,8 +652,8 @@ body::before {
     background:
         linear-gradient(
             145deg,
-            #ff7182,
-            #e3002e
+                      #63aac0,
+             #63aac0
         );
 
     box-shadow:
@@ -679,8 +679,9 @@ body::before {
     background:
         linear-gradient(
             145deg,
-            #fff34d,
+              #f99b45,
             #f3a900
+            
         );
 
     box-shadow:
@@ -706,8 +707,9 @@ body::before {
     background:
         linear-gradient(
             145deg,
-            #48ddff,
-            #0065e8
+                      #819ff9,
+         #819ff9
+            
         );
 
     box-shadow:
